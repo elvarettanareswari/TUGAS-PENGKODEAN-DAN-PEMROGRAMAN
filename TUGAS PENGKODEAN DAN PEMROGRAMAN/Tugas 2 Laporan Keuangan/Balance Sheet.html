@@ -1,0 +1,293 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .balance-sheet {
+            max-width: 1000px;
+            width: 100%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .column {
+            width: 50%;
+        }
+        .balance-sheet h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .item-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            color: #666;
+        }
+        .item-container:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f5ff;
+            border-left: 4px solid #007bff;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="balance-sheet">
+    <h2>Balance Sheet</h2>
+    <div class="columns">
+        <div class="column">
+            <div class="section-title">Assets</div>
+            <div class="section">
+                <div class="section-title">Current Assets</div>
+                <div class="item-container"><span>Cash</span><span>$8,000.00</span></div>
+                <div class="item-container"><span>Account receivable</span><span>$5,000.00</span></div>
+                <div class="item-container"><span>(Less doubtful accounts)</span><span>($500.00)</span></div>
+                <div class="item-container"><span>Inventory</span><span>$10,000.00</span></div>
+                <div class="item-container"><span>Temporary investment</span><span>$3,000.00</span></div>
+                <div class="item-container"><span>Prepaid Expenses</span><span>$2,000.00</span></div>
+                <div class="total"><span>Total Current Assets</span><span>$27,500.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Fixed Assets</div>
+                <div class="item-container"><span>Long-term investments</span><span>$10,000.00</span></div>
+                <div class="item-container"><span>Land</span><span>$15,000.00</span></div>
+                <div class="item-container"><span>Buildings</span><span>$50,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($5,000.00)</span></div>
+                <div class="item-container"><span>Plan And Equipment</span><span>$20,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($2,000.00)</span></div>
+                <div class="item-container"><span>Furniture and fixtures</span><span>$8,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($1,000.00)</span></div>
+                <div class="total"><span>Total Net Fixed Assets</span><span>$95,000.00</span></div>
+                <div class="total"><span>Total Assets</span><span>$122,500.00</span></div>
+            </div>
+        </div>
+    
+        <div class="column">
+            <div class="section-title">Liabilities</div>
+            <div class="section">
+                <div class="section-title">Current Liabilities</div>
+                <div class="item-container"><span>Accounts Payable</span><span>$6,000.00</span></div>
+                <div class="item-container"><span>Short-term notes</span><span>$4,000.00</span></div>
+                <div class="item-container"><span>Current Portion of long-term notes</span><span>$3,500.00</span></div>
+                <div class="item-container"><span>Interest payables</span><span>$2,000.00</span></div>
+                <div class="item-container"><span>Taxes payables</span><span>$1,500.00</span></div>
+                <div class="item-container"><span>Accrued expenses</span><span>$2,000.00</span></div>
+                <div class="total"><span>Total Current Liabilities</span><span>$19,000.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Long-term Liabilities</div>
+                <div class="item-container"><span>Mortgage</span><span>$20,000.00</span></div>
+                <div class="item-container"><span>Other long-term liabilities</span><span>$6,000.00</span></div>
+                <div class="total"><span>Total Long-term liabilities</span><span>$26,000.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Shareholders Equity</div>
+                <div class="item-container"><span>Capital Stock</span><span>$30,000.00</span></div>
+                <div class="item-container"><span>Paid in Capital</span><span>$5,500.00</span></div>
+                <div class="item-container"><span>Retained earnings</span><span>$42,000.00</span></div>
+                <div class="total"><span>Total Equity</span><span>$77,500.00</span></div> 
+                <div class="total"><span>Total Liabilities & Equity</span><span>$122,500.00</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .balance-sheet {
+            max-width: 1000px;
+            width: 100%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .column {
+            width: 50%;
+        }
+        .balance-sheet h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .item-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            color: #666;
+        }
+        .item-container:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f5ff;
+            border-left: 4px solid #007bff;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="balance-sheet">
+    <h2>Balance Sheet</h2>
+    <div class="columns">
+        <div class="column">
+            <div class="section-title">Assets</div>
+            <div class="section">
+                <div class="section-title">Current Assets</div>
+                <div class="item-container"><span>Cash</span><span>$8,000.00</span></div>
+                <div class="item-container"><span>Account receivable</span><span>$5,000.00</span></div>
+                <div class="item-container"><span>(Less doubtful accounts)</span><span>($500.00)</span></div>
+                <div class="item-container"><span>Inventory</span><span>$10,000.00</span></div>
+                <div class="item-container"><span>Temporary investment</span><span>$3,000.00</span></div>
+                <div class="item-container"><span>Prepaid Expenses</span><span>$2,000.00</span></div>
+                <div class="total"><span>Total Current Assets</span><span>$27,500.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Fixed Assets</div>
+                <div class="item-container"><span>Long-term investments</span><span>$10,000.00</span></div>
+                <div class="item-container"><span>Land</span><span>$15,000.00</span></div>
+                <div class="item-container"><span>Buildings</span><span>$50,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($5,000.00)</span></div>
+                <div class="item-container"><span>Plan And Equipment</span><span>$20,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($2,000.00)</span></div>
+                <div class="item-container"><span>Furniture and fixtures</span><span>$8,000.00</span></div>
+                <div class="item-container"><span>(Less accumulated depreciation)</span><span>($1,000.00)</span></div>
+                <div class="total"><span>Total Net Fixed Assets</span><span>$95,000.00</span></div>
+                <div class="total"><span>Total Assets</span><span>$122,500.00</span></div>
+            </div>
+        </div>
+    
+        <div class="column">
+            <div class="section-title">Liabilities</div>
+            <div class="section">
+                <div class="section-title">Current Liabilities</div>
+                <div class="item-container"><span>Accounts Payable</span><span>$6,000.00</span></div>
+                <div class="item-container"><span>Short-term notes</span><span>$4,000.00</span></div>
+                <div class="item-container"><span>Current Portion of long-term notes</span><span>$3,500.00</span></div>
+                <div class="item-container"><span>Interest payables</span><span>$2,000.00</span></div>
+                <div class="item-container"><span>Taxes payables</span><span>$1,500.00</span></div>
+                <div class="item-container"><span>Accrued expenses</span><span>$2,000.00</span></div>
+                <div class="total"><span>Total Current Liabilities</span><span>$19,000.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Long-term Liabilities</div>
+                <div class="item-container"><span>Mortgage</span><span>$20,000.00</span></div>
+                <div class="item-container"><span>Other long-term liabilities</span><span>$6,000.00</span></div>
+                <div class="total"><span>Total Long-term liabilities</span><span>$26,000.00</span></div>
+            </div>
+            <div class="section">
+                <div class="section-title">Shareholders Equity</div>
+                <div class="item-container"><span>Capital Stock</span><span>$30,000.00</span></div>
+                <div class="item-container"><span>Paid in Capital</span><span>$5,500.00</span></div>
+                <div class="item-container"><span>Retained earnings</span><span>$42,000.00</span></div>
+                <div class="total"><span>Total Equity</span><span>$77,500.00</span></div> 
+                <div class="total"><span>Total Liabilities & Equity</span><span>$122,500.00</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+>>>>>>> 2edb793ea79feac10207f555f6cf34e585c464c9

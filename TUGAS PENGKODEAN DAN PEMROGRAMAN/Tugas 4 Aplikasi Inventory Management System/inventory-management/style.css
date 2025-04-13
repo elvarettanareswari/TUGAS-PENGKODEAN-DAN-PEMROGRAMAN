@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #ff4757;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Form Container */
+.form-container {
+    background: #ffeaa7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.form-container h2 {
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    flex: 1;
+    min-width: 150px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #1dd1a1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #10ac84;
+}
+
+/* Inventory Container */
+.inventory-container {
+    background: #dfe6e9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inventory-header h2 {
+    color: #2d3436;
+}
+
+.inventory-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Pastikan elemen sejajar secara vertikal */
+}
+
+.inventory-actions button {
+    background: #00b894;
+}
+
+.inventory-actions button:hover {
+    background: #009e7f;
+}
+
+.inventory-actions select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.inventory-actions input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Table Container */
+.table-container {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #b2bec3;
+}
+
+th {
+    background: #6c5ce7;
+    color: white;
+}
+
+th button {
+    background: #a29bfe;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+th button:hover {
+    background: #5a4bdb;
+}
+
+tr:nth-child(even) {
+    background: #f0f2f5;
+}
+
+tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.edit-btn {
+    background: #ffa502;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #e69500;
+}
+
+.delete-btn {
+    background: #ff4757;
+}
+
+.delete-btn:hover {
+    background: #e63946;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: #00b894; /* Warna hijau yang sama dengan Export to CSV */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pagination button:hover:not(:disabled) {
+    background: #009e7f;
+}
+
+.pagination .page-number {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background: #dfe6e9;
+    color: #2d3436;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pagination .page-number.active {
+    background: #6c5ce7;
+    color: white;
+}
+
+.pagination .page-number:hover:not(.active) {
+    background: #b2bec3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #55efc4;
+    color: #2d3436;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+/* Highlight untuk pencarian */
+.highlight {
+    background-color: #ffeb3b;
+    font-weight: bold;
+}
+
+/* Loading Indicator */
+.loading {
+    margin-left: 10px;
+    color: #2d3436;
+    font-style: italic;
+}
+
+/* Low Stock */
+.low-stock {
+    background-color: #ffcccc !important;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #b2bec3; /* Tambahkan border */
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid #b2bec3; /* Border luar tabel */
+}
+
+th {
+    background: #4834d4; /* Warna ungu yang lebih lembut */
+    color: white;
+}
+
+.inventory-container {
+    background: #dfe6e9;
+    padding: 30px; /* Tambah padding */
+    border-radius: 10px;
+}

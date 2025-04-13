@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Mahasiswa UNDIP</title>
+  <link rel="icon" href="https://undip.ac.id/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .user {
+      display: block;
+      font-size: 14px;
+      margin-top: 5px;
+      opacity: 0.85;
+    }
+
+    .welcome {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .profile-item {
+      background: #f9f9f9;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border-left: 4px solid #003366;
+      font-size: 14.5px;
+      color: #333;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card-grid .card h4 {
+      margin-bottom: 8px;
+      color: #003366;
+      font-size: 18px;
+    }
+
+    .icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+
+    .search-bar {
+      margin: 20px 0;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .program-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .program-list li {
+      margin-bottom: 15px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .program-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .program-list a {
+      font-weight: 600;
+      text-decoration: none;
+      color: #003366;
+    }
+
+    .program-list small {
+      color: #777;
+      font-size: 12px;
+    }
+
+    .badge {
+      background-color: #e53935;
+      color: white;
+      padding: 2px 8px;
+      font-size: 11px;
+      border-radius: 12px;
+      margin-left: 6px;
+    }
+
+    #calendar {
+      max-width: 960px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+ </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Universitas Diponegoro</h1>
+      <span class="user">Elvaretta Nareswari</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h2>Selamat Datang, Elvaretta Nareswari 👋</h2>
+      <p>Mahasiswa Akuntansi S1 - Fakultas Ekonomika dan Bisnis (FEB)</p>
+    </section>
+
+    <section class="profile card">
+      <h3>👤 Profil Mahasiswa</h3>
+      <div class="profile-grid">
+        <div class="profile-item">🆔 <strong>NIM:</strong> 12030123140262</div>
+        <div class="profile-item">📧 <strong>Email Kampus:</strong> elvarettanareswari@students.undip.ac.id</div>
+        <div class="profile-item">📩 <strong>Email Pribadi:</strong> elvarettanareswari45@gmail.com</div>
+        <div class="profile-item">📱 <strong>No HP:</strong> 0821-5911-9145</div>
+      </div>
+    </section>
+
+    <section class="search-bar">
+      <input type="text" placeholder="Cari fitur..." id="searchInput" />
+    </section>
+
+    <h2>🏢 Fasilitas</h2>
+    <div class="card-grid">
+      <div class="card"><h4>📻 Radio</h4><p>Radio ProAlma UNDIP</p></div>
+      <div class="card"><h4>📱 Google Play</h4><p>Google Play Store</p></div>
+      <div class="card"><h4>📧 E-mail</h4><p>Outlook <span class="badge">58 belum dibaca</span></p></div>
+      <div class="card"><h4>💼 Office</h4><p>Office 365 Cloud Service</p></div>
+      <div class="card"><h4>☁️ OneDrive</h4><p>Penyimpanan Online</p></div>
+      <div class="card"><h4>🎧 Teams</h4><p>Microsoft Teams</p></div>
+    </div>
+
+    <h2>📱 Aplikasi & Layanan</h2>
+    <div class="card-grid">
+      <div class="card"><h4>🎓 SIAP</h4><p>Sistem Akademik, Penelitian, Pengabdian</p></div>
+      <div class="card"><h4>🧠 Online Courses</h4><p>Kuliah Online</p></div>
+      <div class="card"><h4>📚 Jurnal Dilanggan</h4><p>Scopus, ScienceDirect, dll</p></div>
+      <div class="card"><h4>📖 E-Journal UNDIP</h4><p>Jurnal Internal UNDIP</p></div>
+      <div class="card"><h4>🏛️ SLIMS</h4><p>Perpustakaan Terpadu</p></div>
+      <div class="card"><h4>⚕️ AccessMedicine</h4><p>Referensi Klinis</p></div>
+    </div>
+
+    <h2>🧩 Layanan Tambahan</h2>
+    <div class="card-grid">
+      <div class="card"><h4>🎤 HALO Undip</h4></div>
+      <div class="card"><h4>📝 Pendaftaran Blog</h4></div>
+      <div class="card"><h4>🎽 E-Ticketing Atribut</h4><p>Regonline</p></div>
+      <div class="card"><h4>✍️ Form</h4><p>e-vote, news, survei, dll</p></div>
+      <div class="card"><h4>🎉 Event</h4><p>Kegiatan Mahasiswa</p></div>
+      <div class="card"><h4>🏆 Scholarship</h4><p>Informasi Beasiswa</p></div>
+      <div class="card"><h4>🗳️ E-Vote BEM</h4><p>Pemilu BEM 2025</p></div>
+      <div class="card"><h4>🔬 SSC</h4><p>Students Scientific Competition</p></div>
+      <div class="card"><h4>🧩 SIASAT <span class="badge">RELEASE</span></h4><p>Kerja Sama Terpadu</p></div>
+    </div>
+
+    <div class="container">
+      <h2>📅 Program</h2>
+      <div class="program-list">
+        <ul>
+          <li><a href="#">🗳️ [Live] Pemilihan Raya BEM UNDIP 2024</a><br/><small>Dimulai 17 Des 2024 pukul 08:00</small></li>
+          <li><a href="#">🎽 Pengambilan Atribut Mahasiswa Baru</a><br/><small>Petunjuk pengambilan atribut</small></li>
+          <li><a href="#">🎯 Sistem Informasi Presensi Upacara</a><br/><small>Presensi upacara mahasiswa</small></li>
+        </ul>
+      </div>
+    </div>
+
+     <div class="container">
+    <div class="card">
+      <h3>📅 Kalender</h3>
+      <iframe src="https://calendar.google.com/calendar/embed?src=id.indonesian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FJakarta" style="border:0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>📊 Progress Akademik</h3>
+      <p>IPK Saat Ini: <strong>3.82</strong></p>
+      <p>SKS Ditempuh: <strong>108/144</strong></p>
+      <progress value="108" max="144" style="width: 100%; height: 20px;"></progress>
+    </div>
+
+    <div class="card">
+      <h3>🕒 Jam Digital</h3>
+      <div id="digitalClock" style="font-size: 28px;">00:00:00</div>
+    </div>
+
+    <div class="card">
+      <h3>⏳ Hitung Mundur UAS</h3>
+      <p id="countdown"></p>
+    </div>
+
+    <div class="card">
+      <h3>📌 Motivasi Hari Ini</h3>
+      <p id="quoteText">Loading...</p>
+    </div>
+  </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Universitas Diponegoro | All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cardGrids = document.querySelectorAll('.card-grid .card');
+
+    searchInput.addEventListener('input', function () {
+      const value = this.value.toLowerCase();
+      cardGrids.forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(value) ? 'block' : 'none';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,listWeek'
+        },
+        events: [
+          { title: 'Pemira BEM', date: '2024-12-17' },
+          { title: 'Ambil Atribut Maba', date: '2024-12-20' },
+          { title: 'Deadline Tugas Akhir', date: '2025-01-15' }
+        ]
+      });
+      calendar.render();
+    });
+
+  // Jam Digital
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('digitalClock').textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Countdown ke UAS (misal 10 Juni 2025)
+  const finalExamDate = new Date('2025-06-10T00:00:00');
+  function updateCountdown() {
+    const now = new Date();
+    const distance = finalExamDate - now;
+
+    if (distance < 0) {
+      document.getElementById('countdown').textContent = 'UAS sudah selesai!';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('countdown').textContent =
+      `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // Motivasi Harian (Random Quote)
+  const quotes = [
+    "Tetap semangat, masa depan cerah menantimu!",
+    "Kesuksesan adalah hasil dari kerja keras yang konsisten.",
+    "Setiap hari adalah peluang baru untuk berkembang.",
+    "Jangan menyerah, kamu lebih kuat dari yang kamu kira.",
+    "Fokus pada tujuan, bukan hambatan."
+  ];
+  function showRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('quoteText').textContent = quotes[randomIndex];
+  }
+  showRandomQuote();
+</script>
+
+

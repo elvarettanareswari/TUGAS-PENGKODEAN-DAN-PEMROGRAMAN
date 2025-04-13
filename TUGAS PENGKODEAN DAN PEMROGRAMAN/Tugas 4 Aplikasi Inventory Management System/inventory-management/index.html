@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management System</h1>
+        
+        <!-- Form Tambah Item -->
+        <div class="form-container">
+            <h2>Add New Item</h2>
+            <form id="addForm">
+                <input type="text" id="name" placeholder="Item Name" required>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <input type="number" id="price" placeholder="Price" step="0.01" required>
+                <input type="text" id="category" placeholder="Category" required>
+                <button type="submit" id="addButton">Add Item</button>
+                <span id="loading" class="loading" style="display: none;">Loading...</span>
+            </form>
+        </div>
+
+        <!-- Inventory List -->
+        <div class="inventory-container">
+            <div class="inventory-header">
+                <h2>Inventory List</h2>
+                <div class="inventory-actions">
+                    <button onclick="exportToCSV()">Export to CSV</button>
+                    <select id="itemsPerPageSelect" onchange="changeItemsPerPage()">
+                        <option value="5">5 per page</option>
+                        <option value="10">10 per page</option>
+                        <option value="20">20 per page</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search by name or category..." onkeyup="debounceSearch()">
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Quantity <button onclick="sortTable('quantity')">Sort</button></th>
+                            <th>Price <button onclick="sortTable('price')">Sort</button></th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTable"></tbody>
+                </table>
+                <div class="pagination">
+                    <button onclick="previousPage()" id="prevButton">Previous</button>
+                    <span id="pageNumbers"></span>
+                    <button onclick="nextPage()" id="nextButton">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal untuk Edit Item -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <h2>Edit Item</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editId">
+                    <input type="text" id="editName" placeholder="Item Name" required>
+                    <input type="number" id="editQuantity" placeholder="Quantity" required>
+                    <input type="number" id="editPrice" placeholder="Price" step="0.01" required>
+                    <input type="text" id="editCategory" placeholder="Category" required>
+                    <button type="submit">Update Item</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Notifikasi -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

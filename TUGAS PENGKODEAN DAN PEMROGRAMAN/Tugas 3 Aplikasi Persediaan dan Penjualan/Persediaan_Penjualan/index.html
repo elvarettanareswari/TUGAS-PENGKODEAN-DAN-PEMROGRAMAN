@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h2>Inventory Management Dashboard</h2>
+
+    <!-- Dashboard Ringkasan -->
+    <section id="dashboard">
+        <div><strong>Total Produk:</strong> <span id="total-produk">0</span></div>
+        <div><strong>Total Stok:</strong> <span id="total-stok">0</span></div>
+        <div><strong>Total Transaksi:</strong> <span id="total-transaksi">Rp 0</span></div>
+    </section>
+
+    <!-- Tambah Produk -->
+    <section>
+        <h3>Tambah Produk</h3>
+        <input type="text" id="nama" placeholder="Nama Produk">
+        <input type="number" id="stok" placeholder="Stok">
+        <input type="number" id="harga" placeholder="Harga">
+        <button onclick="tambahProduk()">Tambah</button>
+    </section>
+
+    <!-- Edit Produk -->
+    <section>
+        <h3>Edit Produk</h3>
+        <select id="produk-edit"></select>
+        <input type="text" id="nama-edit" placeholder="Nama Baru">
+        <input type="number" id="stok-edit" placeholder="Stok Baru">
+        <input type="number" id="harga-edit" placeholder="Harga Baru">
+        <button onclick="editProduk()">Simpan Perubahan</button>
+    </section>
+
+    <!-- Update Stok -->
+    <section>
+        <h3>Update Stok</h3>
+        <select id="produk-update"></select>
+        <input type="number" id="tambah-stok" placeholder="Tambah Stok">
+        <button onclick="updateStok()">Update</button>
+    </section>
+
+    <!-- Jual Produk -->
+    <section>
+        <h3>Jual Produk</h3>
+        <select id="produk-jual"></select>
+        <input type="number" id="jumlah-jual" placeholder="Jumlah">
+        <button onclick="jualProduk()">Jual</button>
+    </section>
+
+    <!-- Tabel Produk dengan Filter dan Export -->
+    <section>
+        <h3>Daftar Produk</h3>
+        <input type="text" id="filter-produk" placeholder="Cari produk..." onkeyup="filterProduk()">
+        <button onclick="exportProdukExcel()">Export Produk ke Excel</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Stok</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="produk-body"></tbody>
+        </table>
+    </section>
+
+    <!-- Tabel Transaksi -->
+    <section>
+        <h3>Riwayat Transaksi</h3>
+        <button onclick="exportTransaksiExcel()">Export Transaksi ke Excel</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produk</th>
+                    <th>Jumlah</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="transaksi-body"></tbody>
+        </table>
+        <p><strong>Total Semua Penjualan:</strong> <span id="total-semua">Rp 0</span></p>
+    </section>
+</body>
+</html>
